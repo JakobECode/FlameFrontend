@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 
 const ProductDetail= () => {
   const [product, setProduct] = useState({});
   const { id } = useParams();
+  const navigate = useNavigate();  
+
   useEffect(() => {
     const fetchProduct = async () => {
       try {
@@ -22,6 +24,24 @@ const ProductDetail= () => {
 
   }, [id]);
 
+  const handleDelete = async () => {
+    try {
+      const response = await fetch(`https://localhost:7272/api/Products/delete/${id}`, {
+        method: 'DELETE',
+      });
+
+      if (!response.ok) {
+        throw new Error('Något gick fel vid borttagning av produkt');
+      }
+
+      // Uppdatera UI eller navigera användaren till en annan sida efter borttagning
+      // Här tar jag användaren tillbaka till en lista över produkter som ett exempel
+      navigate.push('/');
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <>
       <h2>{product.title}</h2>
@@ -31,6 +51,9 @@ const ProductDetail= () => {
       <p>Tag: {product.Tag}</p>
       <img src={product.imageUrl} alt={product.title} style={{ maxWidth: '100%', height: 'auto' }} />
       {/* Lägg till fler detaljer beroende på din produktmodell */}
+
+      <button className="btn btn-danger" onClick={handleDelete}>Delete</button>
+
     </>
   );
 }
