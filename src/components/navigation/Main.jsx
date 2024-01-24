@@ -2,6 +2,7 @@ import {Route,Routes} from 'react-router-dom';
 import Home from '../views/Home';
 import About from '../views/About';
 import Contact from '../views/Contact';
+import ProductDetail from '../views/ProductDetail';
 
 //Komponent som hanterar content ytan i applikationen och vilken komponent 
 //som skall visas där
@@ -15,6 +16,7 @@ const Main = () => {
             <Route exact path ="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element= {<Contact />} />
+            <Route path="/productdetail" element= {<ProductDetail />} />
          </Routes> 
           )
 

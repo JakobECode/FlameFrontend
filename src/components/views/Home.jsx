@@ -19,8 +19,7 @@ const Home = () => {
     };
 
     fetchProducts(); // Anropa funktionen vid montering
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    
   }, []); // Tomt beroendearray för att anropa endast vid montering
 
   return (

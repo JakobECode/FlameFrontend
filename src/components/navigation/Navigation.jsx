@@ -10,6 +10,7 @@ const Navigation = () => {
                 <li><NavLink to="/">Hem</NavLink>  </li> 
                 <li><NavLink to="/about">Om företaget</NavLink></li>
                 <li><NavLink to="/contact">Kontakt</NavLink></li>
+                <li><NavLink to="/productdetail">ProductDetail</NavLink></li>
             </ul>
 
         </nav>
