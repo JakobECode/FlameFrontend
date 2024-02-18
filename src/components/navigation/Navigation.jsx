@@ -1,4 +1,3 @@
-
 import { NavLink } from "react-router-dom";
 
 //Komponent som hanterar navigeringen i applikationen
