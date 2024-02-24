@@ -30,7 +30,6 @@ const Home = () => {
         {products.map((product) => (
           <li key={product.id}><a href={`http://localhost:3000/productdetail/${product.id}`}>{product.title}</a> </li>
         ))}
-        
       </ul>
     </>
   );

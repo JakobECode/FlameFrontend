@@ -57,9 +57,6 @@ const ProductDetail= () => {
 
       <button className="btn btn-danger" onClick={handleDelete}>Delete</button>
       <Link to={`/product/${id}/edit`}>Edit Product</Link>
-
-      {/* <ProductEdit product={product} onUpdate={handleUpdateProduct} /> */}
-
     </>
   );
 }

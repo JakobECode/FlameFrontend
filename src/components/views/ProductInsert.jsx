@@ -41,15 +41,7 @@ function ProductInsert() {
 
   return (
     <form onSubmit={(e) => { e.preventDefault(); handleInsert(); }}>
-        <h2>Lägg till ny produkt</h2>
-        {/* <input type="text" name="title" placeholder="Titel" onChange={handleInputChange} />
-        <textarea name="description" placeholder="Beskrivning" onChange={handleInputChange}></textarea>
-        <input type="number" name="price" placeholder="Pris" onChange={handleInputChange} />
-        <input type="number" name="starRating" placeholder="Star Rating" onChange={handleInputChange} />
-        <input type="number" name="categoryId" placeholder="Kategori ID" onChange={handleInputChange} />
-        <input type="text" name="tag" placeholder="Tagg" onChange={handleInputChange} />
-        <input type="text" name="imageUrl" placeholder="Bild URL" onChange={handleInputChange} /> */}
-        
+        <h2>Lägg till ny produkt</h2>      
         <div className="mb-3">
         <label className="form-label">Titel</label>
         <input type="text" className="form-control" name="title" placeholder="Titel" onChange={handleInputChange} />
