@@ -1,0 +1,59 @@
+.image-section {
+    position: relative;
+  }
+  
+  img {
+    width: 100%;
+    height: 300px;
+  }
+  
+  .image-menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .icons {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  
+  .image-link {
+    height: 50px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    color: grey;
+    
+  }
+  
+  .hej{
+    color: grey;
+    opacity: 0.9;
+  }
+  
+  .hej:hover{
+    color: #E06469;
+    opacity: 1;
+  }
+  
+  .bag-icon-hej:hover{
+   color: black;
+  }
+  
+  .red{
+    color: #E06469;
+    opacity: 0.9;
+  }
+  
+  .red:hover{
+    opacity: 1;
+  }

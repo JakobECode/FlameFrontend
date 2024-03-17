@@ -1,0 +1,164 @@
+/*FilterAndSort*/
+
+.sorting{
+    text-align: right;
+}
+
+.filter-content{
+    color: grey;
+}
+
+.card-content{
+    color: grey;
+}
+
+.img-part{
+    position: relative;
+}
+
+.img-menu{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.icon-card-heart{
+  position: absolute;
+  right: 10px;
+  top: 20px;
+  cursor: pointer;
+}
+
+.icon-card-bag{
+  position: absolute;
+  right: 10px;
+  top: 50px;
+  cursor: pointer;
+}
+
+/*FilterProduct*/
+
+.under-title{
+    font-weight: bold;
+}
+
+.circle-size {
+    border: 1px solid lightgrey;
+    font-size: 15px;
+    color: #000000;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    line-height: 50px;
+    text-align: center;
+}
+
+.circle-size:hover{
+    background-color: lightgray;
+    cursor: pointer;
+}
+
+.color{
+    height: 25px;
+    width: 25px;
+}
+
+.color:hover{
+    box-shadow: 0 0 0 1px white, 0 0 0 5px lightgray;
+}
+
+.checkbox-content{
+    width: 40px;
+    margin-right: 0;
+}
+
+.checkbox-filter{
+    accent-color: #000000;
+}
+
+.checkbox-filter:hover{
+    cursor: pointer;
+}
+
+.tag-filter{
+    width: 70px;
+    height: 20px;
+    font-size: 12px;
+    color: white;
+    text-align: center;
+    padding-bottom: 20px;
+    margin-top: 5px;
+}
+
+.background-green{
+    background-color: #5C8984;
+}
+
+.background-yellow{
+    background-color: #CBB279;
+}
+
+.background-purple{
+    background-color: #BA90C6;
+}
+
+.form-range{
+    height: 1rem;
+    cursor: pointer;
+}
+
+.max-price{
+    text-align: right;
+}
+
+.current-value{
+    text-align: center;
+}
+
+.text-price{
+    color: gray;
+}
+
+.tags-filter{
+    border: 1px solid lightgray;
+    border-radius: 25px;
+    margin-left: 10px;
+    text-align: center;
+    margin-top: 5px;
+    width: 80px;
+}
+
+.tags-filter:hover{
+    cursor: pointer;
+    background-color: lightgray;
+}
+
+.dark-background{
+    background-color: gray;
+}
+
+.dark-box-shadow{
+    box-shadow: 0 0 0 1px white, 0 0 0 5px gray;
+}
+
+.sort-icon{
+    cursor: pointer;
+}
+
+.sort-icon:hover{
+    color: black;
+}
+
+.sorting-content{
+    text-align: right;
+    font-size: 15px;
+    color: gray;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.sorting-text:hover{
+    color: black;
+    cursor: pointer;
+}

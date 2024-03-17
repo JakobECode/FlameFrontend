@@ -1,0 +1,448 @@
+/* Profile Section */
+
+.container {
+    padding-bottom: 110px;
+  }
+  
+  .upper-profile-content {
+    text-align: center;
+  }
+  
+  .profile-text {
+    text-align: left;
+    font-weight: bold;
+    font-size: 1rem;
+  }
+  
+  .profile-icon {
+    margin: 0 10px 0 2px;
+  }
+  
+  .profile-arrow {
+    text-align: right;
+  }
+  
+  .profile-arrow i {
+    font-weight: bold;
+    margin-right: 10px;
+    opacity: 0.9;
+    cursor: pointer;
+  }
+  
+  .profile-arrow-default i {
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  
+  .profile-arrow i:hover {
+    opacity: 1;
+  }
+  
+  .log-out {
+    cursor: pointer;
+  }
+  
+  /* SignOut Section */
+  
+  #sign-out {
+    background-color: gray !important;
+    min-height: 850px;
+  }
+  
+  .sign-out-content {
+    text-align: center;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 220px;
+  }
+  
+  .outer-circle {
+    border: 4px solid white;
+    height: 330px;
+    width: 330px;
+    border-radius: 50%;
+    margin-left: 22px;
+  }
+  
+  .inner-circle {
+    border: 2px solid #f7f7f7;
+    background-color: #f7f7f7;
+    margin-top: 20px;
+    height: 280px;
+    width: 280px;
+    border-radius: 50%;
+  }
+  
+  .text-inner-circle {
+    margin: 10px 10px;
+    font-weight: bold;
+    font-size: 1rem;
+  }
+  
+  .button-inner-circle {
+    width: 50%;
+    border-radius: 25px;
+    height: 45px;
+    font-size: 1rem;
+    border: 0;
+  }
+  
+  .black-button {
+    background-color: black;
+    color: white;
+  }
+  
+  .white-button {
+    background-color: #f7f7f7;
+  }
+  
+  /* Adress Section */
+  
+  .adress-title {
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  .new-adress {
+    text-align: center;
+  }
+  
+  .validation {
+    text-align: center;
+  }
+  
+  .profile-addresses-text {
+    margin-left: 65px;
+    color: grey;
+    font-size: 15px;
+  }
+  
+  .address-icon {
+    margin: 0 25px;
+  }
+  
+  #delete-icon {
+    margin-right: 20px;
+    color: #e06469;
+    font-size: 20px;
+  }
+  
+  /* Profile Picture Section */
+  
+  .profile-picture-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 3px;
+  }
+  
+  .profile-picture {
+    height: 250px;
+    width: 250px;
+    border: 5px solid lightgrey;
+    border-radius: 50%;
+    display: flex;
+  }
+  
+  .profile-circle {
+    background: lightgrey;
+    color: #000000;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    text-decoration: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    bottom: 80px;
+    left: 100px;
+  }
+  
+  .profile-circle:hover {
+    background: grey;
+  }
+  
+  /*Payment Section*/
+  .payment-title {
+    text-align: center;
+    font-weight: bold;
+  }
+  .cards-title {
+    text-align: left;
+    font-weight: bold;
+  }
+  .addcard-title {
+    text-align: right;
+    font-size: 0.9em;
+    font-weight: lighter;
+    opacity: 0.9;
+  }
+  .addcard-icon {
+    text-align: right;
+    margin-left: 1em;
+    font-size: 1em;
+    font-weight: lighter;
+  }
+  
+  /*Add Card Section*/
+  .add-new-card {
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+  
+  @import url("https://fonts.googleapis.com/css2?family=Mulish&family=Quicksand&display=swap");
+  .card-icon {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    width: 23em;
+    height: 14em;
+    border-radius: 1.8em;
+    background: rgb(120, 66, 128);
+    background: linear-gradient(
+      305deg,
+      rgba(120, 66, 128, 1) 15%,
+      rgba(130, 68, 139, 1) 32%,
+      rgba(130, 68, 139, 1) 50%,
+      rgba(120, 66, 128, 1) 71%
+    );
+    font-family: "Mulish";
+    color: #ffff;
+    box-shadow: 2px 2px 2px rgb(158, 154, 154);
+  }
+  .card-icon-visa {
+    grid-row: 1;
+    grid-column: 1/4;
+    margin-left: 20px;
+    font-size: 4em;
+    color: #fffffff3;
+    align-self: center;
+  }
+  .card-icon-name {
+    grid-row: 3;
+    grid-column: 1/3;
+    margin-left: 20px;
+    font-size: 18px;
+  }
+  .card-icon-card-no {
+    grid-row: 2;
+    grid-column: 1/4;
+    margin-left: 20px;
+    font-size: 20px;
+    word-spacing: 15px;
+  }
+  .card-icon-exp-end {
+    grid-row: 3;
+    grid-column: 4/5;
+    font-size: 15px;
+  }
+  
+  .delete-card-icon {
+    grid-row: 1;
+    grid-column: 5;
+    align-self: center;
+  }
+  
+  .card-icon-small {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    width: 18em;
+    height: 11em;
+    border-radius: 1em;
+    background: rgb(120, 66, 128);
+    background: linear-gradient(
+      305deg,
+      rgba(120, 66, 128, 1) 15%,
+      rgba(130, 68, 139, 1) 32%,
+      rgba(130, 68, 139, 1) 50%,
+      rgba(120, 66, 128, 1) 71%
+    );
+    font-family: "Mulish";
+    color: #ffff;
+    box-shadow: 2px 2px 2px rgb(158, 154, 154);
+  }
+  .card-icon-visa-small {
+    grid-row: 1;
+    grid-column: 1/4;
+    margin-left: 20px;
+    font-size: 2em;
+    color: #fffffff3;
+    align-self: center;
+  }
+  .card-icon-name-small {
+    grid-row: 3;
+    grid-column: 1/3;
+    margin-left: 20px;
+    font-size: 0.8em;
+  }
+  .card-icon-card-no-small {
+    grid-row: 2;
+    grid-column: 1/5;
+    margin-left: 20px;
+    font-size: 1em;
+    word-spacing: 2px;
+  }
+  .card-icon-exp-end-small {
+    grid-row: 3;
+    grid-column: 4/5;
+    font-size: 0.7em;
+  }
+  @media screen and (max-width: 750px) {
+    .card-icon {
+      width: 19em;
+      height: 12em;
+      border-radius: 1.5em;
+    }
+    .card-icon-visa {
+      font-size: 3em;
+    }
+    .card-icon-name {
+      font-size: 15px;
+    }
+    .card-icon-card-no {
+      font-size: 16px;
+      word-spacing: 15px;
+    }
+    .card-icon-exp-end {
+      font-size: 13px;
+    }
+  }
+  @media screen and (max-width: 420px) {
+    .card-icon-small {
+      width: 16em;
+      height: 10em;
+      border-radius: 1em;
+    }
+    .card-icon-visa-small {
+      font-size: 2em;
+    }
+    .card-icon-name-small {
+      font-size: 13px;
+    }
+    .card-icon-card-no-small {
+      font-size: 14px;
+      word-spacing: 10px;
+    }
+    .card-icon-exp-end-small {
+      font-size: 12px;
+    }
+  }
+  
+  .card-contaier {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .slider-wrapper {
+      margin: 1rem;
+      position: relative;
+      overflow: hidden;
+      justify-self: center;
+    }
+    
+  .slides-container {
+  height: auto;
+  width: auto;
+  display: flex;
+  overflow: scroll;
+  scroll-behavior: smooth;
+  overflow-y: hidden;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  scrollbar-width: auto;
+      
+    }  
+  .slide{
+  width: auto;
+  height: auto;
+  margin: 2em;
+  }
+  
+  .slides-container::-webkit-scrollbar {
+    height: 5px;
+  }
+  
+  .slides-container::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 0px rgba(0, 0, 0, 0);
+  }
+  
+  .slides-container::-webkit-scrollbar-thumb {
+    height: 5px;
+    background-color: rgba(167, 166, 166, 0.267);
+  }
+  
+  .slides-container::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(161, 159, 159);
+    cursor: grab;
+  }
+    
+  @media screen and (min-width: 768px){
+      .promocode-container-grid{
+          margin-left: 25%;
+          margin-right: 25%;
+      }
+      .no-promocodes-container-grid{
+          margin-left: 25%;
+          margin-right: 25%;
+      }
+  }
+  @media screen and (min-width: 990px){
+      .promocode-container-grid{
+          margin-left: 30%;
+          margin-right: 30%;
+      }
+      .promocode-btn-current{
+          margin-right: 10px;
+      }
+      .promocode-btn-used{
+          margin-left: 10px;
+      }
+      .no-promocodes-container-grid{
+          margin-left: 30%;
+          margin-right: 30%;
+      }
+  }
+  @media screen and (min-width: 1200px){
+      .promocode-btn-current{
+          justify-self: right;
+          margin-right: 10px;
+      }
+      .promocode-btn-used{
+          justify-self: left;
+          margin-left: 10px;
+      }
+      .no-promocodes-container-grid{
+          margin-left: 35%;
+          margin-right: 35%;
+      }
+  }
+  @media screen and (min-width: 1400px){
+      .promocode-box-img{
+          justify-self: center;
+      }
+      .promocode-item-text{
+          grid-column: 2/4;
+          justify-content: left;
+      }
+  }
+  .card-container {
+    display: block;
+  }
+  
+  .card-div {
+    height: 50px;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+  }
+  
+  

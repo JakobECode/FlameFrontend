@@ -1,0 +1,22 @@
+.box-registration{
+    text-align: center;
+}
+
+.top-registration{
+    text-align: center;
+    height: 30px;
+    margin-bottom: 70px;
+}
+
+.img-registration-success{
+    height: 400px;
+    width: 400px;
+}
+
+.div-top-register-success{
+    height: 3px;
+    width: 4px;
+    border: 1px solid black;
+    text-align: center;
+}
+

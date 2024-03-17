@@ -1,0 +1,39 @@
+.top-header-container{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 50px;
+    padding-right: 50px;
+    align-items: center;
+    height: 100px;
+    position: fixed;
+    width: 100vw;
+    left: 0;
+    right: 0;
+    top: 0;
+    background-color: white;
+    z-index: 100;
+}
+
+.top-header-bag{
+    font-size: 40px;
+    color: black;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+}
+
+.top-header-title{
+    font-family: monospace;
+    font-size: 40px;
+    text-decoration: none;
+    color: black;
+}
+
+@media (max-width: 768px){
+    .top-header-title{
+        font-size: 25px;
+    }
+    .top-header-container{
+        height: 55px;
+    }
+}
