@@ -1,18 +1,18 @@
-import { createContext, useState } from "react";
-export const FilterContext = createContext();
+// import { createContext, useState } from "react";
+// export const FilterContext = createContext();
 
-const FilterProvider = (props) => {
+// const FilterProvider = (props) => {
 
-    const [title, setTitle] = useState("Products");
+//     const [title, setTitle] = useState("Products");
 
-    return (
-        <>
-            <FilterContext.Provider value={{setTitle, title}}>
-                {props.children}
-            </FilterContext.Provider>
-        </>
-    )
+//     return (
+//         <>
+//             <FilterContext.Provider value={{setTitle, title}}>
+//                 {props.children}
+//             </FilterContext.Provider>
+//         </>
+//     )
 
-}
+// }
 
-export default FilterProvider;
+// export default FilterProvider;

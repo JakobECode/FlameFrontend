@@ -10,15 +10,15 @@ import Favorites from "./components/views/favorites/Favorites";
 import { Routes, Route } from "react-router-dom";
 import ForgotPassword from "./components/views/user/forgotpassword/ForgotPassword";
 import ForgotPasswordProvider from "./contexts/ForgotPasswordProvider";
-import ApiProvider from "./Contexts/ApiProvider";
+import ApiProvider from "./contexts/ApiProvider";
 import RegistrationSuccess from "./components/views/user/registration/RegistrationSuccess";
-import Profile from "./components/views/user/profile/profile";
+import Profile from "./components/views/user/profile/Profile";
 import SignOut from "./components/views/user/profile/SignOut";
 import Address from "./components/views/user/profile/Address";
 import RecoverPassword from "./components/views/user/recoverpassword/RecoverPassword";
 import AddNewAdress from "./components/views/user/profile/AddNewAddress";
 import EditProfile from "./components/views/user/profile/EditProfile";
-import EditAddress from "./components/views/user/profile/EditAddress";
+// import EditAddress from "./components/views/user/profile/EditAddress";
 import AddressProvider from "./contexts/AddressProvider";
 import WishlistProvider from "./contexts/WishlistProvider";
 import ProductProvider from "./contexts/ProductProvider";
@@ -30,8 +30,8 @@ import PaymentMethod from "./components/views/user/profile/PaymentMethod";
 import AddCreditCard from "./components/views/user/profile/AddCreditCard";
 import ShoppingCartProvider from "./contexts/ShoppingCartProvider";
 import Checkout from "./components/views/shoppingCart/Checkout";
-import OrderConfirmationPage from "./components/views/oderResult/OrderConfirmationPage";
-import OrderDeclinedPage from "./components/views/oderResult/OrderDeclined";
+// import OrderConfirmationPage from "./components/views/oderResult/OrderConfirmationPage";
+// import OrderDeclinedPage from "./components/views/oderResult/OrderDeclined";
 import OrderHistory from "./components/views/user/profile/OrderHistory";
 import AddReview from "./components/partials/shared/reviews/AddReview";
 import VerifyPhoneNumber from "./components/views/user/verifyphonenumber/VerifyPhoneNumber";
@@ -113,11 +113,11 @@ function App() {
                           </RegistrationProvider>
                         }
                       />
-                      <Route path="/login" element={<Login />} />
+                      {/* <Route path="/login" element={<Login />} />
                       <Route
                         path="/verifyphonenumber"
                         element={<VerifyPhoneNumber />}
-                      />
+                      /> */}
                     </Routes>
                   </ShoppingCartProvider>
                 </ProductProvider>
