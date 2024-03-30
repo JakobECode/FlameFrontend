@@ -1,0 +1,14 @@
+.top-login{
+    text-align: center;
+    height: 30px;
+    margin-bottom: 170px;
+}
+
+.line-login{
+ border: 1px solid black;
+ width: 1px;
+}
+
+.validation{
+    text-align: center;
+}

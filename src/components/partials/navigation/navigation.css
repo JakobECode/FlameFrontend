@@ -1,0 +1,23 @@
+.link {
+    color: black;
+    margin-right: 15px;
+  }
+  
+  .footer-nav {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100px;
+    width: 100%;
+    text-align: center;
+    background-color: #f7f7f7;
+    z-index: 100;
+    padding-top: 20px;
+  }
+  
+  .footer-nav i {
+    height: 50px;
+    width: 50px;
+    font-size: 30px;
+  }

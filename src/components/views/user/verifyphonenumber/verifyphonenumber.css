@@ -1,0 +1,240 @@
+/* Send verify code*/
+@import url('https://fonts.googleapis.com/css2?family=Mulish&family=Quicksand&display=swap');
+.verify-container{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.verify-title{
+    text-align: center;
+    font-size: 1em;
+    font-weight: bold;
+}
+.verify-message{
+    font-size: 0.9em;
+    font-family: "Mulish";
+    color:#626262;
+    margin-left: 10px;
+    margin-right: 10px;;
+}
+.verify-phone-label{
+    font-size: 0.8em;
+}
+.input-field-country-code{
+    position: absolute;
+    top: 1;
+    left: 0;
+    bottom: 0;
+    z-index: 2;
+    cursor: pointer;
+    border: none;
+    margin-bottom: 15px;
+    margin-left: 10px;
+}
+.input-field-country-code img{
+    height: 15px;
+    width: 20px;
+    margin-left: 3px;
+    margin-right: 3px;
+}
+.input-field-country-code i{
+    color: #a09f9f9a;
+    font-size: 1.1em;
+}
+.input-overlay{
+    width: 100%;
+    position: relative;
+}
+.input-overlay input{
+    padding-left: 100px;
+}
+
+@media screen and (min-width: 768px){
+    .verify-title{
+        font-size: 1.1em;
+        font-weight: bold;
+        text-align: center;
+    }
+    .verify-message{
+        font-size: 1em;
+        font-family: "Mulish";
+        color:#626262;
+        margin-left: 10px;
+        margin-right: 10px;
+        text-align: center;
+    }
+    .verify-phone-label{
+        font-size: 0.8em;
+    }
+    .verify-container{
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+}
+@media screen and (min-width: 990px){
+    .verify-title{
+        font-size: 1.1em;
+        font-weight: bold;
+        text-align: center;
+    }
+    .verify-message{
+        font-size: 1em;
+        font-family: "Mulish";
+        color:#626262;
+        margin-left: 10px;
+        margin-right: 10px;
+        text-align: center;
+    }
+    .verify-phone-label{
+        font-size: 0.8em;
+    }
+    .verify-container{
+        padding-left: 25%;
+        padding-right: 25%;
+    }
+    .verify-container button{
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
+@media screen and (min-width: 1200px){
+    .verify-container{
+        padding-left: 30%;
+        padding-right: 30%;
+    }
+    .verify-container button{
+        width: 75%;
+        justify-self: center;
+    }
+    .verify-container form{
+        display: grid;
+    }
+}
+@media screen and (min-width: 1400px){
+    .verify-container{
+        padding-left: 35%;
+        padding-right: 35%;
+    }
+    .verify-container button{
+        width: 50%;
+        justify-self: center;
+    }
+    .verify-container form{
+        display: grid;
+    }
+}
+
+/*Confirm code*/
+.confirm-code-container{
+    width: 100%;
+}
+.confirm-message{
+    font-size: 1em;
+    font-family: "Mulish";
+    color:#626262;
+    text-align: center;
+}
+.confirm-message span{
+    color:#222222;
+    font-weight: bolder;
+    cursor: pointer;
+}
+.confirm-message span:hover{
+    color:#22222288;
+    font-weight: bolder;
+}
+.confirm-code-input-fields{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 3px;
+}
+.confirm-code-input-fields input{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    justify-self: center;
+    align-self: center;
+    padding: 25%;
+    text-align: center;
+    font-size: 1.3em;
+    background-color: #dbe3f5;
+    border: none;
+    color:#222222;
+}
+.confirm-code-input-fields input:focus{
+    outline-color: #c7cddd;
+}
+
+@media screen and (min-width: 768px){
+    .confirm-code-container{
+        display: grid;
+        justify-content: center;
+    }
+    .confirm-code-container button{
+        justify-self: center;
+    }
+    .confirm-code-input-fields{
+        column-gap: 15px;
+    }
+}
+@media screen and (min-width: 990px){
+    .confirm-code-container button{
+        width: 90%;
+    }
+}
+
+.container-confirmed-code{
+    text-align: center;
+    font-size: 1.3em;
+    color:#383838;
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+}
+.container-confirmed-code a{
+    text-align: center;
+    text-decoration: none;
+    font-size: 1em;
+    color: #000000;
+    font-weight: bold;
+}
+.container-confirmed-code a:hover{
+    text-align: center;
+    text-decoration: none;
+    color: lightblue;
+}
+.confirmed-title{
+    grid-column: 1/5;
+    grid-row: 1;
+    justify-self: center;
+    align-self: center;
+}
+.confirmed-text-go-back{
+    grid-column: 1/5;
+    grid-row: 2;
+    justify-self: center;
+}
+.confirmed-links-text-home{
+    grid-column: 1/5;
+    justify-self: center;
+    grid-row: 3;
+}
+.confirmed-links-icon-home{
+    grid-column: 1/5;
+    justify-self: center;
+    grid-row: 3;
+    font-size: 0.7em;
+    align-self: center;
+}
+.confirmed-links-text-profile{
+    grid-column: 1/5;
+    justify-self: center;
+    grid-row: 4;
+}
+.confirmed-links-icon-profile{
+    grid-column: 1/5;
+    justify-self: center;
+    grid-row: 4;
+    font-size: 0.7em;
+    align-self: center;
+}

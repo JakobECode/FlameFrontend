@@ -1,0 +1,50 @@
+.banner{
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  
+  
+  .sale-banner{
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 30px;
+    width: auto;
+    background-color: lightblue;
+    padding-bottom: 10px;
+    padding-left: 10px;
+  }
+  
+  .title{
+    width: 170px;
+    margin-left: 10px;
+    color: white;
+  }
+  
+  
+  .container{
+    margin-top: 20px;
+  }
+  
+  
+  @media (min-width: 768px){
+  
+  
+    .banner{
+        justify-content: center;
+        align-items: center;
+    }
+    .sale-banner{
+        padding-left: 0px;
+        align-items: center;
+    }
+    .title{
+        margin-left: 0px;
+        text-align: center;
+        width: 290px;
+    }
+  }
+  

@@ -1,0 +1,228 @@
+.category-search-page{
+    display: grid;
+    position:relative;
+    z-index: 1;
+    margin-bottom: 100px;
+  }
+  .top-navbar-grid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 70px;
+    border-bottom: 1px solid rgb(241, 240, 240);
+    box-shadow: 0.2px 0.2px 0.2px;
+  }
+  .top-navbar-menu-block{
+    grid-column: 1;
+    align-self: center;
+    justify-self: center;
+  }
+  .top-navbar-search{
+    grid-column: 2/4;
+    display: grid;
+  }
+  .top-navbar-search input{
+    border-radius: 30px;
+    height: 1.5em;
+    width: 15em;
+    justify-self: center;
+    align-self: center;
+    border: 1px solid  rgb(241, 240, 240);
+    padding: 5px;
+  }
+  .top-navbar-cart{
+    display: grid;
+    justify-self: center;
+    align-self: center;
+    font-size: 1.3em;
+    color: #000;
+  }
+  
+  .category-grid-links{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-auto-rows: 80px;
+  }
+  .category-links{
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    font-size: 0.9em;
+    color: black;
+    text-decoration: none;    
+  
+  }
+  .category-links a{
+    text-decoration: none;
+    padding: 8px;
+    color:black;
+  }
+  .category-links a:hover{
+    text-decoration: none;
+    background-color: rgba(201, 216, 250, 0.801);
+    border-radius: 15px;
+  }
+  .category-links a:hover,
+  .category-links a.focus {
+    background-color: lightgray;
+    color:black;
+  }
+  .category-page-grid{
+    display: grid;
+    column-gap: 1px;
+    row-gap: 1px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 200px
+  }
+  .category-page-grid .category-block-1{
+    background-color: rgb(133, 142, 165);
+    position: relative;
+    cursor: pointer;
+  }
+  .category-page-grid .category-block-2{
+    background-color: rgb(133, 142, 165);
+    grid-column: 1/3;
+    position: relative;
+  }
+  .category-page-grid .category-block-text{
+    color: white;
+    font-size: 1.1em;
+    position: absolute;
+    left: 0.5em;
+    bottom: 0.5em;
+  }
+  .category-page-grid .category-block-1 a{
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  .category-page-grid .category-block-2 a{
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  /*Menu/nav/hamburger*/
+  @media (max-width: 767px) {
+    .navigation {
+      display: none;
+      
+    }
+    
+    .hamburger-menu {
+      display: block;
+    }
+    .hamburger-menu:checked ~ .navigation{
+      display: block;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .top-navbar-menu-block {
+      display: block;
+    }
+    .category-grid-links {
+      display: none;
+      
+    }
+  }
+  
+  @media screen and (min-width: 769px) {
+    .top-navbar-menu-block {
+      display: none;
+    }
+    .category-grid-links {
+      display: flex;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .category-grid-links {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  @media (min-width: 768px){
+    .category-links{
+      display:block;
+    }
+  }
+ /* When we click the hamburger menu we want to hide the icon */
+.top-navbar-menu.close {
+  display: none;
+}
+
+/* When we click the menu we want to display this icon */
+.top-navbar-menu.open {
+  display: block;
+}
+/*Contact*/
+.contact-search-page {
+  display: grid;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 100px;
+}
+
+.top-navbar-email {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  font-size: 1.3em;
+  color: #000;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  border-radius: 5px;
+  z-index: 2;
+}
+
+.dropdown-content p {
+  margin: 0;
+  padding: 5px 0;
+}
+
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: -300px;
+  width: 300px;
+  height: 100vh;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: left 0.3s ease-in-out;
+}
+
+.side-menu.show {
+  left: 0;
+}
+
+.side-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px;
+}
+
+.side-menu ul li {
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.side-menu.open{
+  left:0;
+}
+.contact.icon{
+  cursor:pointer;
+}
+
+/* Rest of your existing CSS styles */
+
+/* Rest of your existing CSS styles */
+
+  
+  
+  

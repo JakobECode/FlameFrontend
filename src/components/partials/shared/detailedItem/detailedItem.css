@@ -1,0 +1,47 @@
+.image-section-detailed img {
+    width: 50%;
+    height: auto;
+  }
+  
+  .image-section-detailed {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .container-flex {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .container-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  
+  .amount-counter {
+    display: flex;
+    justify-content: center;
+    padding-right: 5px;
+  }
+  
+  .amount-counter button {
+    border: none;
+    margin: auto;
+    align-items: center;
+    background-color: #f7f7f7;
+  }
+  
+  .center {
+    text-align: center;
+  }
+  
+  @media (min-width: 1000px) {
+    .item-wrapper-detailed {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin: 20px;
+    }
+  }
+  
