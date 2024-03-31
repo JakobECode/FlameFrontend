@@ -28,7 +28,7 @@ const Home = () => {
       <p>Välj bland märken och produkter:</p>
       <ul>
         {products.map((product) => (
-          <li key={product.id}><a href={`http://localhost:3000/productdetail/${product.id}`}>{product.title}</a> </li>
+          <li key={product.id}><a href={`http://localhost:3000/productdetail/${product.id}`}>{product.name}</a> </li>
         ))}
       </ul>
     </>

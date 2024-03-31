@@ -9,7 +9,7 @@ const ProductDetail= () => {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const response = await fetch(`https://localhost:7272/api/Products/id/${id}`);
+        const response = await fetch(`https://localhost:7272/api/Products/Get?id=${id}`);
         if (!response.ok) {
           throw new Error('Något gick fel vid hämtning av produkt');
         }
