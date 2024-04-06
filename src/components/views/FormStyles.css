@@ -30,7 +30,7 @@ form {
     border-radius: 5px;
     box-sizing: border-box; /* För att bredden ska inkludera padding */
   }
-
+ /* Register.css */
   .register-button {
     background: #28a745; /* En grön färg till exempel */
   }

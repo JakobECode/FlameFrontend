@@ -16,7 +16,6 @@ const Routing = () => {
             <Route path ='/login' element={<Login/>}/>
             <Route path ='/Register' element={<Register/>}/>
 
-            
         </Routes>
     )
 }

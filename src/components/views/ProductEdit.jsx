@@ -20,7 +20,7 @@ const ProductEdit = ({ product, onUpdate }) => {
     return (
       <form onSubmit={handleUpdate}>
         <div>
-          <label>Title:</label>
+          <label>Name:</label>
           <input
             type="text"
             name="title"
@@ -43,15 +43,7 @@ const ProductEdit = ({ product, onUpdate }) => {
           />
         </div>
         <div>
-          <label>StarRating:</label>
-          <input
-            type="number"
-            name="starRating"
-            onChange={handleInputChange}
-          />
-        </div>
-        <div>
-          <label>Tag:</label>
+          <label>Category:</label>
           <input
             type="text"
             name="tag"

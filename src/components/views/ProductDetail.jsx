@@ -36,9 +36,8 @@ const ProductDetail= () => {
         throw new Error('Något gick fel vid borttagning av produkt');
       }
 
-      // Uppdatera UI eller navigera användaren till en annan sida efter borttagning
-      // Här tar jag användaren tillbaka till en lista över produkter som ett exempel
-      navigate.push('/');
+      navigate("/");
+
     } catch (error) {
       console.error(error);
     }
@@ -50,13 +49,13 @@ const ProductDetail= () => {
       <h2>{product.title}</h2>
       <p>Beskrivning: {product.description}</p>
       <p>Pris: {product.price} kr</p>
-      <p>StarRating: {product.StarRating}</p>
-      <p>Tag: {product.Tag}</p>
+      <p>Rating: {product.StarRating}</p>
+      <p>Category: {product.category}</p>
       <img src={product.imageUrl} alt={product.title} style={{ maxWidth: '100%', height: 'auto' }} />
 
 
       <button className="btn btn-danger" onClick={handleDelete}>Delete</button>
-      <Link to={`/product/${id}/edit`}>Edit Product</Link>
+      <Link to={`/productedit/${id}`}>Edit Product</Link>
     </>
   );
 }

@@ -3,12 +3,10 @@ import { useNavigate } from 'react-router-dom';
 
 function ProductInsert() {
   const [product, setProduct] = useState({
-    title: '',
+    name: '',
     description: '',
     price: 0,
-    starRating: 0,
-    categoryId: 0,
-    tag: '',
+    category: '',
     imageUrl: ''
   });
 
@@ -20,7 +18,7 @@ function ProductInsert() {
 
   const handleInsert = async () => {
     try {
-      const response = await fetch('https://localhost:7272/api/Products/insert', {
+      const response = await fetch('https://localhost:7272/api/Products/Add', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -43,38 +41,28 @@ function ProductInsert() {
     <form onSubmit={(e) => { e.preventDefault(); handleInsert(); }}>
         <h2>Lägg till ny produkt</h2>      
         <div className="mb-3">
-        <label className="form-label">Titel</label>
-        <input type="text" className="form-control" name="title" placeholder="Titel" onChange={handleInputChange} />
+        <label className="form-label">Name</label>
+        <input type="text" className="form-control" name="name" placeholder="Name" onChange={handleInputChange} />
         </div>
 
         <div className="mb-3">
-            <label className="form-label">Beskrivning</label>
-            <textarea className="form-control" name="description" placeholder="Beskrivning" onChange={handleInputChange}></textarea>
+            <label className="form-label">Description</label>
+            <textarea className="form-control" name="description" placeholder="Description" onChange={handleInputChange}></textarea>
         </div>
 
         <div className="mb-3">
-        <label className="form-label">Pris</label>
-        <input type="number" className="form-control" name="price" placeholder="Pris" onChange={handleInputChange} />
+        <label className="form-label">Price</label>
+        <input type="number" className="form-control" name="price" placeholder="Price" onChange={handleInputChange} />
         </div>
 
         <div className="mb-3">
-        <label className="form-label">Star Rating</label>
-        <input type="number" className="form-control" name="starRating" placeholder="Star Rating" onChange={handleInputChange} />
+        <label className="form-label">Category</label>
+        <input type="number" className="form-control" name="category" placeholder="Category" onChange={handleInputChange} />
         </div>
 
         <div className="mb-3">
-        <label className="form-label">Kategori ID</label>
-        <input type="number" className="form-control" name="categoryId" placeholder="Kategori ID" onChange={handleInputChange} />
-        </div>
-
-        <div className="mb-3">
-        <label className="form-label">Tagg</label>
-        <input type="text" className="form-control" name="tag" placeholder="Tagg" onChange={handleInputChange} />
-        </div>
-
-        <div className="mb-3">
-        <label className="form-label">Bild URL</label>
-        <input type="text" className="form-control" name="imageUrl" placeholder="Bild URL" onChange={handleInputChange} />
+        <label className="form-label">ImageUrl</label>
+        <input type="text" className="form-control" name="imageUrl" placeholder="ImageUrl" onChange={handleInputChange} />
         </div>
 
         <button type="submit" className="btn btn-primary">Submit</button>
