@@ -49,7 +49,7 @@ const ProductDetail= () => {
       <h2>{product.title}</h2>
       <p>Beskrivning: {product.description}</p>
       <p>Pris: {product.price} kr</p>
-      <p>Rating: {product.StarRating}</p>
+      <p>Rating: {product.Rating}</p>
       <p>Category: {product.category}</p>
       <img src={product.imageUrl} alt={product.title} style={{ maxWidth: '100%', height: 'auto' }} />
 

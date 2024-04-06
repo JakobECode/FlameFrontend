@@ -23,7 +23,7 @@ const ProductEdit = ({ product, onUpdate }) => {
           <label>Name:</label>
           <input
             type="text"
-            name="title"
+            name="namn"
             onChange={handleInputChange}
           />
         </div>
@@ -46,7 +46,7 @@ const ProductEdit = ({ product, onUpdate }) => {
           <label>Category:</label>
           <input
             type="text"
-            name="tag"
+            name="category"
             onChange={handleInputChange}
           />
         </div>
