@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
+import './../../assets/styles/app.css';
 
-const ProductDetail= () => {
+const ProductDetail = () => {
   const [product, setProduct] = useState({});
   const { id } = useParams();
- 
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -21,10 +22,7 @@ const ProductDetail= () => {
     };
 
     fetchProduct();
-
   }, [id]);
-
-  const navigate = useNavigate(); 
 
   const handleDelete = async () => {
     try {
@@ -37,26 +35,24 @@ const ProductDetail= () => {
       }
 
       navigate("/");
-
     } catch (error) {
       console.error(error);
     }
   };
 
-
   return (
-    <>
-      <h2>{product.title}</h2>
-      <p>Beskrivning: {product.description}</p>
-      <p>Pris: {product.price} kr</p>
-      <p>Rating: {product.Rating}</p>
-      <p>Category: {product.category}</p>
-      <img src={product.imageUrl} alt={product.title} style={{ maxWidth: '100%', height: 'auto' }} />
-
-
-      <button className="btn btn-danger" onClick={handleDelete}>Delete</button>
-      <Link to={`/productedit/${id}`}>Edit Product</Link>
-    </>
+    <div className="product-detail-container">
+      <h2 className="product-title">{product.title}</h2>
+      <img src={product.imageUrl} alt={product.title} className="product-image" />
+      <p className="product-info">Beskrivning: {product.description}</p>
+      <p className="product-info">Pris: {product.price} kr</p>
+      <p className="product-info">Rating: {product.Rating}</p>
+      <p className="product-info">Kategori: {product.category}</p>
+      <div className="action-buttons">
+        <button className="action-button delete-button" onClick={handleDelete}>Delete</button>
+        <Link to={`/productedit/${id}`} className="action-button edit-link">Edit Product</Link>
+      </div>
+    </div>
   );
 }
 

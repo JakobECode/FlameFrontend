@@ -41,3 +41,86 @@ h1 {
 p {
   margin-bottom: 15px;
 }
+
+/*Home css*/
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.product-card {
+  height: ;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.product-card a {
+  color: inherit; /* Inget blått länkfärg */
+  text-decoration: none; /* Ingen understruken text */
+}
+
+.product-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.product-info {
+  padding: 15px;
+}
+
+.product-info h4 {
+  margin-top: 0;
+}
+
+/*ProductDetail*/
+
+.product-detail-container {
+  padding: 20px;
+  max-width: 800px;
+  margin: auto;
+}
+
+.product-title {
+  color: #333;
+}
+
+.product-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.product-info {
+  font-size: 18px;
+}
+
+.action-buttons {
+  margin-top: 20px;
+}
+
+.action-button {
+  padding: 10px 15px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.delete-button {
+  background-color: red;
+}
+
+.edit-link {
+  background-color: blue;
+  padding: 10px 15px; /* Justera för att matcha delete-knappen om det behövs */
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}

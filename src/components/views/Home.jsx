@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './../../assets/styles/app.css';
 
 const Home = () => {
   const [products, setProducts] = useState([]);
@@ -26,11 +27,20 @@ const Home = () => {
     <>
       <h3>Produkter</h3>
       <p>Välj bland märken och produkter:</p>
-      <ul>
+      <div className="product-grid">
         {products.map((product) => (
-          <li key={product.id}><a href={`http://localhost:3000/productdetail/${product.id}`}>{product.name}</a> </li>
+          <div key={product.id} className="product-card">
+            <a href={`http://localhost:3000/productdetail/${product.id}`}>
+              <img src={product.imageUrl} alt={product.name} className="product-image" />
+              <div className="product-info">
+                <h4>{product.name}</h4>
+                <p>{product.description}</p>
+                <p>{product.price} SEK</p>
+              </div>
+            </a>
+          </div>
         ))}
-      </ul>
+      </div>
     </>
   );
 }
