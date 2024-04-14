@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import'./FormStyles.css'
-// Antag att du har en funktion för att skicka registreringsdata till din API
-// import { registerService } from 'path/to/your/services';
+import 'bootstrap/dist/css/bootstrap.min.css';  // Ensure Bootstrap CSS is imported
+import './FormStyles.css';
 
 const Register = () => {
     const [userDetails, setUserDetails] = useState({
@@ -13,7 +12,7 @@ const Register = () => {
       roleName: 'user',
     });
     const navigate = useNavigate();
-  
+
     const handleChange = (e) => {
       const { name, value } = e.target;
       setUserDetails({
@@ -21,11 +20,10 @@ const Register = () => {
         [name]: value,
       });
     };
-  
+
     const handleSubmit = async (e) => {
       e.preventDefault();
       try {
-        // Ersätt URL med din faktiska endpoint för registrering
         const response = await fetch('https://localhost:7272/api/Account/Register', {
           method: 'POST',
           headers: {
@@ -33,76 +31,81 @@ const Register = () => {
           },
           body: JSON.stringify(userDetails),
         });
-  
+
         if (!response.ok) {
           throw new Error('Registration failed');
         }
-  
-        // Hantera svaret, t.ex. genom att visa en bekräftelse eller omdirigera användaren
+
         console.log('Registration successful');
-        navigate('/login'); // Omdirigera till inloggningssidan efter lyckad registrering
+        navigate('/login'); // Redirect to login page after successful registration
       } catch (error) {
         console.error('Registration failed:', error);
-        // Här kan du hantera och visa eventuella felmeddelanden
       }
     };
-  
+
     return (
-      <form onSubmit={handleSubmit}>
-        <h2>Register</h2>
-        <div>
-          <label htmlFor="firstName">First Name:</label>
-          <input
-            type="text"
-            name="firstName"
-            id="firstName"
-            value={userDetails.firstName}
-            onChange={handleChange}
-          />
-        </div>
-        <div>
-          <label htmlFor="lastName">Last Name:</label>
-          <input
-            type="text"
-            name="lastName"
-            id="lastName"
-            value={userDetails.lastName}
-            onChange={handleChange}
-          />
-        </div>
-        <div>
-          <label htmlFor="email">Email:</label>
-          <input
-            type="email"
-            name="email"
-            id="email"
-            value={userDetails.email}
-            onChange={handleChange}
-          />
-        </div>
-        <div>
-          <label htmlFor="password">Password:</label>
-          <input
-            type="password"
-            name="password"
-            id="password"
-            value={userDetails.password}
-            onChange={handleChange}
-          />
-        </div>
-        <div>
-          <label htmlFor="roleName">Role Name:</label>
-          <input
-            type="text"
-            name="roleName"
-            id="roleName"
-            value={userDetails.roleName}
-            onChange={handleChange}
-          />
-        </div>
-        <button type="submit">Register</button>
-      </form>
+      <div className="container mt-5">
+        <form onSubmit={handleSubmit} className="card card-body">
+          <h2 className="text-center mb-4">Register</h2>
+          <div className="form-group">
+            <label htmlFor="firstName">First Name:</label>
+            <input
+              type="text"
+              className="form-control"
+              name="firstName"
+              id="firstName"
+              value={userDetails.firstName}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="lastName">Last Name:</label>
+            <input
+              type="text"
+              className="form-control"
+              name="lastName"
+              id="lastName"
+              value={userDetails.lastName}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="email">Email:</label>
+            <input
+              type="email"
+              className="form-control"
+              name="email"
+              id="email"
+              value={userDetails.email}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="password">Password:</label>
+            <input
+              type="password"
+              className="form-control"
+              name="password"
+              id="password"
+              value={userDetails.password}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="roleName">Role Name:</label>
+            <input
+              type="text"
+              className="form-control"
+              name="roleName"
+              id="roleName"
+              value={userDetails.roleName}
+              onChange={handleChange}
+            />
+          </div>
+          <button type="submit" className="btn btn-primary btn-block">Register</button>
+        </form>
+      </div>
     );
-  };
-  
-  export default Register;
+};
+
+export default Register;

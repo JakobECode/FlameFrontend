@@ -86,6 +86,8 @@ p {
 
 .product-title {
   color: #333;
+  padding: 15px 20px 
+  
 }
 
 .product-image {
@@ -124,3 +126,4 @@ p {
   text-decoration: none;
   border-radius: 5px;
 }
+
