@@ -57,7 +57,7 @@ function ProductInsert() {
 
         <div className="mb-3">
         <label className="form-label">Category</label>
-        <input type="number" className="form-control" name="category" placeholder="Category" onChange={handleInputChange} />
+        <input type="text" className="form-control" name="category" placeholder="Category" onChange={handleInputChange} />
         </div>
 
         <div className="mb-3">

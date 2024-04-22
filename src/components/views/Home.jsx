@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import './../../assets/styles/app.css';  // Ensure your custom styles complement Bootstrap
 
 const Home = () => {
   const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -13,13 +14,24 @@ const Home = () => {
         }
         const data = await response.json();
         setProducts(data);
+        setLoading(false);
       } catch (error) {
         console.error(error);
+        setError(error.message);
+        setLoading(false);
       }
     };
 
     fetchProducts();
   }, []);
+
+  if (loading) {
+    return <div className="container mt-4"><p>Loading...</p></div>;
+  }
+
+  if (error) {
+    return <div className="container mt-4"><p>Error: {error}</p></div>;
+  }
 
   return (
     <div className="container mt-4">
@@ -28,7 +40,7 @@ const Home = () => {
       <div className="row">
         {products.map((product) => (
           <div key={product.id} className="col-md-4 mb-4">
-            <div className="card">
+            <div className="card h-100"> {/* Adjust card height */}
               <img src={product.imageUrl} alt={product.name} className="card-img-top" />
               <div className="card-body">
                 <h4 className="card-title">{product.name}</h4>

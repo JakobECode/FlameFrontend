@@ -11,9 +11,12 @@ function ProductEdit() {
     category: '',
     imageUrl: ''
   });
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
 
   useEffect(() => {
     const fetchProductData = async () => {
+      setLoading(true);
       try {
         const response = await fetch(`https://localhost:7272/api/Products/Get?id=${id}`);
         if (!response.ok) {
@@ -22,7 +25,9 @@ function ProductEdit() {
         const data = await response.json();
         setProduct(data);
       } catch (error) {
-        console.error(error);
+        setError(error.message);
+      } finally {
+        setLoading(false);
       }
     };
 
@@ -35,6 +40,7 @@ function ProductEdit() {
 
   const handleUpdate = async (e) => {
     e.preventDefault();
+    setLoading(true);
     try {
       const response = await fetch(`https://localhost:7272/api/Products/Update`, {
         method: 'PUT',
@@ -50,9 +56,14 @@ function ProductEdit() {
 
       navigate(`/`);
     } catch (error) {
-      console.error(error); // Consider a more user-friendly error handling
+      setError(error.message);
+    } finally {
+      setLoading(false);
     }
   };
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error: {error}</p>;
 
   return (
     <div className="container mt-5">

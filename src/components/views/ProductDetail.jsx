@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
-import './../../assets/styles/app.css'; // Ensure your custom styles don't conflict with Bootstrap
 
 const ProductDetail = () => {
   const [product, setProduct] = useState({});
@@ -40,19 +39,24 @@ const ProductDetail = () => {
     }
   };
 
-  return (
-    <div className="container mt-5">
-      <h2 className="text-center mb-4">{product.title}</h2>
-      <div className="text-center">
-        <img src={product.imageUrl} alt={product.title} className="img-fluid mb-3" />
-      </div>
-      <p className="lead">Beskrivning: {product.description}</p>
-      <p className="lead">Pris: {product.price} kr</p>
-      <p className="lead">Rating: {product.Rating}</p>
-      <p className="lead">Kategori: {product.category}</p>
-      <div className="d-flex justify-content-around mt-4">
-        <button className="btn btn-danger" onClick={handleDelete}>Delete Product</button>
-        <Link to={`/productedit/${id}`} className="btn btn-primary">Edit Product</Link>
+    return (
+      <div className="container mt-5">
+      <div className="card">
+        <h2 className="card-header text-center">{product.title}</h2>
+        <div className="card-body">
+          <div className="text-center">
+            <img src={product.imageUrl} alt={product.title} className="img-fluid mb-3" />
+          </div>
+          <p className="font-weight-bold">Name: {product.name}</p>
+          <p className="text-muted">Description: {product.description}</p>
+          <p className="font-weight-normal">Price: {product.price} kr</p>
+          <p className="font-italic">Rating: {product.Rating}</p>
+          <p className="text-uppercase">Category: {product.category}</p>
+        </div>
+        <div className="card-footer d-flex justify-content-around">
+          <button className="btn btn-danger" onClick={handleDelete}>Delete Product</button>
+          <Link to={`/productedit/${product.id}`} className="btn btn-primary">Edit Product</Link>
+        </div>
       </div>
     </div>
   );
