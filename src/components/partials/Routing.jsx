@@ -5,6 +5,8 @@ import ProductInsert from '../views/ProductInsert';
 import ProductEdit from '../views/ProductEdit';
 import Login from "../views/Login";
 import Register from "../views/Register";
+import Contact from "../views/Contact";
+import About from "../views/About";
 
 const Routing = () => {
     return(
@@ -15,6 +17,10 @@ const Routing = () => {
             <Route path='/productedit/:id' element={<ProductEdit />} />
             <Route path ='/login' element={<Login/>}/>
             <Route path ='/Register' element={<Register/>}/>
+            <Route path ='/Contact' element={<Contact/>}/>
+            <Route path ='/About' element={<About/>}/>
+            
+            
 
         </Routes>
     )

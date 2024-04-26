@@ -45,7 +45,11 @@ const ProductDetail = () => {
         <h2 className="card-header text-center">{product.title}</h2>
         <div className="card-body">
           <div className="text-center">
-            <img src={product.imageUrl} alt={product.title} className="img-fluid mb-3" />
+          <img 
+  src={product.imageUrl} 
+  alt={product.title} 
+  className="img-fluid mb-3 custom-image-size custom-image-border custom-image-shadow custom-image-rotate" 
+/>
           </div>
           <p className="font-weight-bold">Name: {product.name}</p>
           <p className="text-muted">Description: {product.description}</p>
