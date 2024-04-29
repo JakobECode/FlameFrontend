@@ -60,3 +60,46 @@ form {
     border-color: #007bff;
     box-shadow: 0 0 2px #007bff;
   }
+
+  /* Responsive Design Adjustments */
+@media (max-width: 768px) {
+  form {
+      padding: 15px; /* Slightly less padding to save space */
+      margin: 20px auto;
+  }
+
+  h2 {
+      font-size: 18px; /* Smaller heading for smaller screens */
+  }
+
+  input[type="text"],
+  input[type="password"],
+  button {
+      padding: 8px; /* Smaller padding for input fields and button */
+  }
+
+  label {
+      font-size: 14px; /* Smaller label font size */
+  }
+}
+
+@media (max-width: 480px) {
+  form {
+      margin: 10px auto;
+      max-width: 90%; /* Allow form to take more horizontal space */
+  }
+
+  h2 {
+      font-size: 16px; /* Even smaller heading for very small screens */
+  }
+
+  div {
+      margin-bottom: 15px;
+  }
+
+  input[type="text"],
+  input[type="password"],
+  button {
+      font-size: 14px; /* Increase font size for readability on very small devices */
+  }
+}

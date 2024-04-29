@@ -7,6 +7,7 @@ import Login from "../views/Login";
 import Register from "../views/Register";
 import Contact from "../views/Contact";
 import About from "../views/About";
+import OrderList from "../views/OrderList";
 
 const Routing = () => {
     return(
@@ -19,9 +20,8 @@ const Routing = () => {
             <Route path ='/Register' element={<Register/>}/>
             <Route path ='/Contact' element={<Contact/>}/>
             <Route path ='/About' element={<About/>}/>
+            <Route path ='/OrderList' element={<OrderList/>}/>
             
-            
-
         </Routes>
     )
 }
