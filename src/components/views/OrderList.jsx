@@ -2,8 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Modal, Button, Card } from 'react-bootstrap';
 
+// API endpoint to fetch all orders
 const API_URL = 'https://localhost:7272/api/Order/AllOrders';
 
+// Function to fetch orders from the API
 const fetchOrders = async () => {
   const response = await fetch(API_URL);
   if (!response.ok) {
@@ -12,25 +14,35 @@ const fetchOrders = async () => {
   return await response.json();
 };
 
+// OrderList component definition
 const OrderList = () => {
-  const [orders, setOrders] = useState([]);
-  const [error, setError] = useState('');
-  const [loading, setLoading] = useState(true);
+  const [orders, setOrders] = useState([]); // State to hold the list of orders
+  const [error, setError] = useState('');   // State to handle any errors
+  const [loading, setLoading] = useState(true); // State to handle the loading status
 
+  // Effect hook to fetch orders when component mounts
   useEffect(() => {
     fetchOrders().then(setOrders).catch(error => {
-      setError(error.message);
+      setError(error.message); // Set error message if fetching fails
     }).finally(() => {
-      setLoading(false);
+      setLoading(false); // Ensure loading is set to false after fetching
     });
   }, []);
 
+  // Function to format the date strings
+  const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    return date.toLocaleDateString() + ' ' + date.toLocaleTimeString();
+  };
+
+  // Display loading message
   if (loading) return (
     <div className="container mt-3 text-center">
       <p>Loading orders...</p>
     </div>
   );
 
+  // Display error modal if an error occurred
   if (error) return (
     <Modal show={true} onHide={() => setError('')}>
       <Modal.Header closeButton>
@@ -45,11 +57,7 @@ const OrderList = () => {
     </Modal>
   );
 
-  const formatDate = (dateString) => {
-    const date = new Date(dateString);
-    return date.toLocaleDateString() + ' ' + date.toLocaleTimeString();
-  };
-
+  // Render the list of orders if not loading and no error
   return (
     <div className="container mt-3">
       <h1 className="mb-3">Order List</h1>

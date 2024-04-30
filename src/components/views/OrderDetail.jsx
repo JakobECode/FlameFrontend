@@ -5,7 +5,7 @@ import { Modal, Button, Card } from 'react-bootstrap';
 const API_URL = 'https://localhost:7272/api/Order/GetByOrderId/{id}';
 
 const OrderDetail = () => {
-  const { orderId } = useParams();
+  const { orderId } = useParams();  // Correct place to call useParams
   const [order, setOrder] = useState(null);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(true);
@@ -14,7 +14,7 @@ const OrderDetail = () => {
   useEffect(() => {
     const fetchOrderDetails = async () => {
       try {
-        const response = await fetch(`${API_URL}/${orderId}`);
+        const response = await fetch(`${API_URL.replaceAll('{id}', orderId)}`); // Using replace to insert the orderId into the URL
         if (!response.ok) {
           throw new Error('Failed to fetch order details');
         }
@@ -28,7 +28,7 @@ const OrderDetail = () => {
     };
 
     fetchOrderDetails();
-  }, [orderId]);
+  }, [orderId]);  // Dependency array ensures useEffect runs when orderId changes
 
   if (loading) return (
     <div className="container mt-3 text-center">
@@ -61,6 +61,7 @@ const OrderDetail = () => {
             <Card.Text><strong>Status:</strong> {order.orderStatus}</Card.Text>
             <Card.Text><strong>Total:</strong> ${order.total}</Card.Text>
             <Card.Text><strong>Address:</strong> {order.streetName}</Card.Text>
+            <Card.Text><strong>Email:</strong> {order.email}</Card.Text>
             <Button variant="secondary" onClick={() => navigate(-1)}>Back to orders</Button>
           </Card.Body>
         </Card>
