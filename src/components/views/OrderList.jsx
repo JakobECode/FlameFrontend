@@ -63,9 +63,7 @@ const OrderList = () => {
                 Status: {order.orderStatus}<br/>
                 Address: {order.streetName}
               </Card.Text>
-              <Link to={`/order/${order.id}`} className="btn btn-primary">
-                View Details
-              </Link>
+              <Link to={`/OrderDetail/${order.id}`} className="btn btn-primary">View Details</Link>
             </Card.Body>
           </Card>
         ))}

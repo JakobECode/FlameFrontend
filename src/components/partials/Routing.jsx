@@ -8,6 +8,7 @@ import Register from "../views/Register";
 import Contact from "../views/Contact";
 import About from "../views/About";
 import OrderList from "../views/OrderList";
+import OrderDetail from "../views/OrderDetail";
 
 const Routing = () => {
     return(
@@ -21,6 +22,8 @@ const Routing = () => {
             <Route path ='/Contact' element={<Contact/>}/>
             <Route path ='/About' element={<About/>}/>
             <Route path ='/OrderList' element={<OrderList/>}/>
+            <Route path ='/OrderDetail' element={<OrderDetail/>}/>
+            
             
         </Routes>
     )
