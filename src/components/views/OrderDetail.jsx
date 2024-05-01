@@ -59,7 +59,7 @@ const OrderDetail = () => {
             <Card.Title>{order.name}</Card.Title>
             <Card.Text><strong>Date:</strong> {new Date(order.orderDate).toLocaleDateString()} {new Date(order.orderDate).toLocaleTimeString()}</Card.Text>
             <Card.Text><strong>Status:</strong> {order.orderStatus}</Card.Text>
-            <Card.Text><strong>Total:</strong> ${order.total}</Card.Text>
+            <Card.Text><strong>Price:</strong> ${order.price}</Card.Text>
             <Card.Text><strong>Address:</strong> {order.streetName}</Card.Text>
             <Card.Text><strong>Email:</strong> {order.email}</Card.Text>
             <Button variant="secondary" onClick={() => navigate(-1)}>Back to orders</Button>
