@@ -2,18 +2,6 @@ html {
   box-sizing: border-box;
 }
 
-*, *::before, *::after {
-  box-sizing: inherit;
-  padding: 0;
-  margin: 0;
-}
-
-.app {
-  width: 960px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
 nav ul {
   list-style: none;
   display: flex;
@@ -30,62 +18,10 @@ nav ul li a {
   text-decoration: none;
 }
 
-.current {
-  border-bottom: 4px solid white;
-}
 
-h1 {
-  margin-bottom: 20px;
-}
 
-p {
-  margin-bottom: 15px;
-}
 
-/*Home css*/
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 20px;
-  padding: 20px;
-}
 
-.product-card {
-  height: 100p;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  overflow: hidden;
-}
 
-.product-card a {
-  color: inherit; /* Inget blått länkfärg */
-  text-decoration: none; /* Ingen understruken text */
-}
 
-.product-image {
-  width: 50%;
-  height: 100px;
-  object-fit: cover;
-}
 
-.product-info {
-  padding: 15px;
-}
-
-.product-info h4 {
-  margin-top: 0;
-}
-
-/*ProductDetail css*/
-
-.custom-image-size {
-  width: 20%; /* eller använd procent för responsivitet, t.ex. 100% */
-  height: auto; /* bevarar bildens proportioner */
-}
-.custom-image-border {
-  border: 1px solid #000; /* Svart ram */
-}
-
-.custom-image-shadow {
-  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); /* Lägger till skugga */
-}

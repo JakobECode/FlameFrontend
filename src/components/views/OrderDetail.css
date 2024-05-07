@@ -1,0 +1,9 @@
+.custom-image-size {
+    width: 50px; /* Adjust the width as needed */
+    height: auto; /* Maintains the aspect ratio */
+}
+.btn-secondary {
+    width: 150px;  /* Anpassad bredd */
+    height: 50px;  /* Anpassad höjd */
+    padding: 10px 20px; /* Anpassad padding */
+}

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { Modal, Button, Card } from 'react-bootstrap';
+import './OrderDetail.css';
 
 const API_URL = 'https://localhost:7272/api/Order/GetByOrderId/{id}';
 
@@ -52,13 +53,13 @@ const OrderDetail = () => {
             <Card.Text><strong>OrderId:</strong> {order.id}</Card.Text>
             <Card.Text><strong>Quantity:</strong> {order.quantity}</Card.Text>
             <Card.Text><strong>Date:</strong> {new Date(order.orderDate).toLocaleDateString()} {new Date(order.orderDate).toLocaleTimeString()}</Card.Text>
-            <Card.Text><strong>Status:</strong> {order.orderStatus}</Card.Text>
             {order.items && order.items.map((item, index) => (
               <Card.Text key={index}>
-                <strong>Item:</strong> {item.name} - {item.quantity} at ${item.price} each
-                <Card.Img className="custom-image-size" src={item.imageUrl} />
+                <strong>Item:</strong> {item.name} - {item.quantity}  {item.price}kr
+                <Card.Img className="custom-image-size" src={item.imageUrl} alt="Item Image" />
               </Card.Text>
             ))}
+            <Card.Text><strong>Status:</strong> {order.orderStatus}</Card.Text>
             <Card.Text><strong>Address:</strong> {order.streetName}</Card.Text>
             <Card.Text><strong>PostalCode:</strong> {order.postalCode}</Card.Text>
             <Card.Text><strong>City:</strong> {order.city}</Card.Text>

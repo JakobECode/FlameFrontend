@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
+import { Card, Button } from 'react-bootstrap';
+import './ProductDetail.css';
 
 const ProductDetail = () => {
   const [product, setProduct] = useState({});
@@ -39,29 +41,29 @@ const ProductDetail = () => {
     }
   };
 
-    return (
-      <div className="container mt-5">
-      <div className="card">
-        <h2 className="card-header text-center">{product.name}</h2>
-        <div className="card-body">
+ return (
+    <div className="container mt-5">
+      <Card>
+        <Card.Header as="h2" className="text-center">{product.name}</Card.Header>
+        <Card.Body>
           <div className="text-center">
-          <img 
-  src={product.imageUrl} 
-  alt={product.title} 
-  className="img-fluid mb-3 custom-image-size custom-image-border custom-image-shadow custom-image-rotate" 
-/>
+            <img 
+              src={product.imageUrl} 
+              alt={product.title} 
+              className="img-fluid mb-3 custom-image-size custom-image-border custom-image-shadow custom-image-rotate" 
+            />
           </div>
-          <p className="font-weight-bold">Name: {product.name}</p>
-          <p className="text-muted">Description: {product.description}</p>
-          <p className="font-weight-normal">Price: {product.price} kr</p>
-          <p className="font-italic">Rating: {product.Rating}</p>
-          <p className="text-uppercase">Category: {product.category}</p>
-        </div>
-        <div className="card-footer d-flex justify-content-around">
-          <button className="btn btn-danger" onClick={handleDelete}>Delete Product</button>
-          <Link to={`/productedit/${product.id}`} className="btn btn-primary">Edit Product</Link>
-        </div>
-      </div>
+          <Card.Text><strong>Name:</strong> {product.name}</Card.Text>
+          <Card.Text><span className="text-muted">Description:</span> {product.description}</Card.Text>
+          <Card.Text><strong>Price:</strong> {product.price} kr</Card.Text>
+          <Card.Text><em>Rating:</em> {product.Rating}</Card.Text>
+          <Card.Text className="text-uppercase"><strong>Category:</strong> {product.category}</Card.Text>
+        </Card.Body>
+        <Card.Footer className="d-flex justify-content-around">
+          <Button className="custom-button-size btn-danger" onClick={handleDelete}>Delete Product</Button>
+          <Link to={`/productedit/${product.id}`} className="btn custom-button-size btn-primary">Edit Product</Link>
+        </Card.Footer>
+      </Card>
     </div>
   );
 }

@@ -1,0 +1,20 @@
+/*ProductDetail css*/
+
+.custom-image-size {
+    width: 100px;  /* Justera till önskad bredd */
+     /* Bibehåller bildens proportioner */
+}
+.custom-button-size {
+    width: 200px;  /* Justera till önskad bredd */
+    height: 50px;  /* Justera till önskad höjd */
+    padding: 10px 20px; /* Justera padding för att ge knappen mer innehållsrymd */
+    text-align: justify center;
+}
+
+.custom-image-border {
+    border: 1px solid #000; /* Svart ram */
+}
+  
+.custom-image-shadow {
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); /* Lägger till skugga */
+}
