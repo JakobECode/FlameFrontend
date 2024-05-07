@@ -48,24 +48,21 @@ const OrderDetail = () => {
       <h1>Order Details</h1>
       {order ? (
         <Card>
-          <Card.Img variant="top" src={order.imageUrl} onError={(e) => { e.target.onerror = null; e.target.src = '/Images/default.png'; }} />
           <Card.Body>
-            <Card.Title>{order.name}</Card.Title>
             <Card.Text><strong>OrderId:</strong> {order.id}</Card.Text>
-            <Card.Text><strong>Date:</strong> {new Date(order.orderDate).toLocaleDateString()} {new Date(order.orderDate).toLocaleTimeString()}</Card.Text>
             <Card.Text><strong>Quantity:</strong> {order.quantity}</Card.Text>
+            <Card.Text><strong>Date:</strong> {new Date(order.orderDate).toLocaleDateString()} {new Date(order.orderDate).toLocaleTimeString()}</Card.Text>
             <Card.Text><strong>Status:</strong> {order.orderStatus}</Card.Text>
-            <Card.Text><strong>Price:</strong> ${order.price}</Card.Text>
+            {order.items && order.items.map((item, index) => (
+              <Card.Text key={index}>
+                <strong>Item:</strong> {item.name} - {item.quantity} at ${item.price} each
+                <Card.Img className="custom-image-size" src={item.imageUrl} />
+              </Card.Text>
+            ))}
             <Card.Text><strong>Address:</strong> {order.streetName}</Card.Text>
             <Card.Text><strong>PostalCode:</strong> {order.postalCode}</Card.Text>
             <Card.Text><strong>City:</strong> {order.city}</Card.Text>
             <Card.Text><strong>Country:</strong> {order.country}</Card.Text>
-            <Card.Text><strong>Email:</strong> {order.email}</Card.Text>
-            {order.items && order.items.map((item, index) => (
-              <Card.Text key={index}>
-                <strong>Item:</strong> {item.name} - {item.quantity} at ${item.price} each
-              </Card.Text>
-            ))}
             <Button variant="secondary" onClick={() => navigate(-1)}>Back to orders</Button>
           </Card.Body>
         </Card>

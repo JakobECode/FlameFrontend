@@ -32,7 +32,7 @@ form {
   }
  /* Register.css */
   .register-button {
-    background: #28a745; /* En grön färg till exempel */
+    background: #28a745; 
   }
   
   .register-button:hover {

@@ -42,7 +42,7 @@ const ProductDetail = () => {
     return (
       <div className="container mt-5">
       <div className="card">
-        <h2 className="card-header text-center">{product.title}</h2>
+        <h2 className="card-header text-center">{product.name}</h2>
         <div className="card-body">
           <div className="text-center">
           <img 

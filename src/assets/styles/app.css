@@ -63,8 +63,8 @@ p {
 }
 
 .product-image {
-  width: 100%;
-  height: 200px;
+  width: 50%;
+  height: 100px;
   object-fit: cover;
 }
 
@@ -79,7 +79,7 @@ p {
 /*ProductDetail css*/
 
 .custom-image-size {
-  width: 30%; /* eller använd procent för responsivitet, t.ex. 100% */
+  width: 20%; /* eller använd procent för responsivitet, t.ex. 100% */
   height: auto; /* bevarar bildens proportioner */
 }
 .custom-image-border {
@@ -89,11 +89,3 @@ p {
 .custom-image-shadow {
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); /* Lägger till skugga */
 }
-
-
-/* OrderDetails.css */
-/* .card-img-top {
-  object-fit: cover;
-  height: 250px;
-  width: 100px;
-} */
