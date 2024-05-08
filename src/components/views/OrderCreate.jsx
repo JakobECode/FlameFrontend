@@ -1,28 +1,28 @@
 import React, { useState } from 'react';
-import { Form, Button, Container, Alert, InputGroup } from 'react-bootstrap';
+import { Form, Button, Container, Alert } from 'react-bootstrap';
+import { useParams } from 'react-router-dom'; // Import useParams
 
 const CreateOrder = () => {
+  const { productId } = useParams(); // Get productId from the URL
   const [orderDetails, setOrderDetails] = useState({
     id: 0,
     customerName: '',
     orderDate: '',
     quantity: 0,
-    orderStatus: 'Pending', // Default to 'Pending'
+    orderStatus: 'Pending',
     email: '',
     streetName: '',
     postalCode: '',
     city: '',
     country: '',
-    items: []
+    items: [productId] // Set initial items array with productId from the URL
   });
   const [error, setError] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
-    if (name === "items") {
-      setOrderDetails({ ...orderDetails, [name]: value.split(',').map(item => item.trim()) });
-    } else if (name === "quantity") {
+    if (name === "quantity") {
       setOrderDetails({ ...orderDetails, [name]: parseInt(value, 10) });
     } else {
       setOrderDetails({ ...orderDetails, [name]: value });
@@ -43,14 +43,10 @@ const CreateOrder = () => {
         body: JSON.stringify(orderDetails)
       });
 
-      console.log(response);
-
       if (!response.ok) {
-        // throw new Error(`HTTP error! status: ${response.status}`);
         setError('Failed to create order: ');
-      }
-      else {
-        setError('Det blev rätt: ');
+      } else {
+        setError('Order created successfully!');
         setOrderDetails({
           id: 0,
           customerName: '',
@@ -62,14 +58,12 @@ const CreateOrder = () => {
           postalCode: '',
           city: '',
           country: '',
-          items: []
+          items: [productId] // Reset items to only include productId
         });
       }
-    } 
-    catch (error) 
-    {
-    } 
-    finally {
+    } catch (error) {
+      setError('An error occurred.');
+    } finally {
       setIsSubmitting(false);
     }
   };
@@ -157,16 +151,6 @@ const CreateOrder = () => {
             value={orderDetails.country}
             onChange={handleInputChange}
             required
-          />
-        </Form.Group>
-        <Form.Group className="mb-3">
-          <Form.Label>Items (comma-separated):</Form.Label>
-          <Form.Control
-            type="text"
-            name="items"
-            placeholder="Item1, Item2, Item3"
-            value={orderDetails.items}
-            onChange={handleInputChange}
           />
         </Form.Group>
         <Button variant="primary" type="submit" disabled={isSubmitting}>
