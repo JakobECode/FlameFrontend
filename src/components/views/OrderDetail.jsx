@@ -3,7 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { Modal, Button, Card } from 'react-bootstrap';
 import './OrderDetail.css';
 
-const API_URL = 'https://localhost:7272/api/Order/GetByOrderId/{id}';
+const API_URL = process.env.REACT_APP_API_URL || 'https://localhost:7272/api/Order/GetByOrderId/{id}';
 
 const OrderDetail = () => {
   const { orderId } = useParams();
@@ -15,9 +15,9 @@ const OrderDetail = () => {
   useEffect(() => {
     const fetchOrderDetails = async () => {
       try {
-        const response = await fetch(`${API_URL.replaceAll('{id}', orderId)}`);
+        const response = await fetch(API_URL.replace('{id}', orderId));
         if (!response.ok) {
-          throw new Error('Failed to fetch order details');
+          throw new Error(`Failed to fetch order details: ${response.status} ${response.statusText}`);
         }
         const data = await response.json();
         setOrder(data);
@@ -44,6 +44,8 @@ const OrderDetail = () => {
     </Modal>
   );
 
+  const formattedDate = order ? `${new Date(order.orderDate).toLocaleDateString()} ${new Date(order.orderDate).toLocaleTimeString()}` : '';
+
   return (
     <div className="container mt-3">
       <h1>Order Details</h1>
@@ -52,18 +54,13 @@ const OrderDetail = () => {
           <Card.Body>
             <Card.Text><strong>OrderId:</strong> {order.id}</Card.Text>
             <Card.Text><strong>Quantity:</strong> {order.quantity}</Card.Text>
-            <Card.Text><strong>Date:</strong> {new Date(order.orderDate).toLocaleDateString()} {new Date(order.orderDate).toLocaleTimeString()}</Card.Text>
+            <Card.Text><strong>Date:</strong> {formattedDate}</Card.Text>
             {order.items && order.items.map((item, index) => (
               <Card.Text key={index}>
-                <strong>Item:</strong> {item.name} - {item.quantity}  {item.price}kr
-                <Card.Img className="custom-image-size" src={item.imageUrl} alt="Item Image" />
+                <strong>Item:</strong> {item.name} - {item.quantity} {item.price}kr
+                <Card.Img className="custom-image-size" src={item.imageUrl} alt={`Image of ${item.name}`} />
               </Card.Text>
             ))}
-            <Card.Text><strong>Status:</strong> {order.orderStatus}</Card.Text>
-            <Card.Text><strong>Address:</strong> {order.streetName}</Card.Text>
-            <Card.Text><strong>PostalCode:</strong> {order.postalCode}</Card.Text>
-            <Card.Text><strong>City:</strong> {order.city}</Card.Text>
-            <Card.Text><strong>Country:</strong> {order.country}</Card.Text>
             <Button variant="secondary" onClick={() => navigate(-1)}>Back to orders</Button>
           </Card.Body>
         </Card>

@@ -50,18 +50,18 @@ const ProductDetail = () => {
             <img 
               src={product.imageUrl} 
               alt={product.title} 
-              className="img-fluid mb-3 custom-image-size custom-image-border custom-image-shadow custom-image-rotate" 
+              className="img-fluid mb-3 custom-image custom-image-border custom-image-shadow" 
             />
           </div>
           <Card.Text><strong>Name:</strong> {product.name}</Card.Text>
-          <Card.Text><span className="text-muted">Description:</span> {product.description}</Card.Text>
+          <Card.Text><strong className="text">Description:</strong> {product.description}</Card.Text>
           <Card.Text><strong>Price:</strong> {product.price} kr</Card.Text>
-          <Card.Text><em>Rating:</em> {product.Rating}</Card.Text>
-          <Card.Text className="text-uppercase"><strong>Category:</strong> {product.category}</Card.Text>
+          <Card.Text><strong>Rating:</strong> {product.Rating}</Card.Text>
+          <Card.Text className="text"><strong>Category:</strong> {product.category}</Card.Text>
         </Card.Body>
-        <Card.Footer className="d-flex justify-content-around">
+        <Card.Footer className="d-flex justify-content">
           <Button className="custom-button-size btn-danger" onClick={handleDelete}>Delete Product</Button>
-          <Link to={`/productedit/${product.id}`} className="btn custom-button-size btn-primary">Edit Product</Link>
+          <Link to={`/productedit/${product.id}`} className="btn custom-button btn-primary">Edit Product</Link>
         </Card.Footer>
       </Card>
     </div>

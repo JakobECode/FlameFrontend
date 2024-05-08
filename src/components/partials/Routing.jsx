@@ -9,6 +9,7 @@ import Contact from "../views/Contact";
 import About from "../views/About";
 import OrderList from "../views/OrderList";
 import OrderDetail from "../views/OrderDetail";
+import OrderCreate from "../views/OrderCreate";
 
 const Routing = () => {
     return(
@@ -23,6 +24,7 @@ const Routing = () => {
             <Route path ='/About' element={<About/>}/>
             <Route path ='/OrderList' element={<OrderList/>}/>
             <Route path='/OrderDetail/:orderId' element={<OrderDetail/>}/>
+            <Route path='/OrderCreate' element={<OrderCreate/>}/>
             
         </Routes>
     )

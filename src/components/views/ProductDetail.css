@@ -1,8 +1,8 @@
 /*ProductDetail css*/
 
 .custom-image-size {
-    width: 100px;  /* Justera till önskad bredd */
-     /* Bibehåller bildens proportioner */
+    width: 100%; /* Öka bredden till 100% av containerens bredd */
+    height: auto; /* Behåll bildens proportioner */
 }
 .custom-button-size {
     width: 200px;  /* Justera till önskad bredd */
@@ -17,4 +17,15 @@
   
 .custom-image-shadow {
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); /* Lägger till skugga */
+}
+
+.card{
+    border: 1px solid hsla(0, 0%, 0%, 80%);
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px hsla(0, 0%, 0%, 0.1);
+    padding: 20px;
+    margin: 10px;
+    max-height:inherit;
+    display:inline-block;
+   
 }

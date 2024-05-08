@@ -7,13 +7,17 @@ const API_URL = 'https://localhost:7272/api/Order/AllOrders';
 
 // Function to fetch orders from the API
 const fetchOrders = async () => {
-  const response = await fetch(API_URL);
-  if (!response.ok) {
-    throw new Error('Network response was not ok');
+  try {
+    const response = await fetch(API_URL);
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status} ${response.statusText}`);
+    }
+    return await response.json();
+  } catch (error) {
+    console.error('Fetching orders failed:', error);
+    throw error;  // Re-throw to handle it in the component
   }
-  return await response.json();
 };
-
 // OrderList component definition
 const OrderList = () => {
   const [orders, setOrders] = useState([]); // State to hold the list of orders

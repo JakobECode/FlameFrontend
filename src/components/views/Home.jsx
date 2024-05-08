@@ -36,7 +36,7 @@ const Home = () => {
   }
 
   return (
-    <div className="container mt-4">
+    <div className="container mt-3">
       <h3>Produkter</h3>
       <p>Välj bland märken och produkter:</p>
       <div className="row">
@@ -46,7 +46,7 @@ const Home = () => {
               <img src={product.imageUrl} alt={product.name} className="card-img-top" />
               <div className="card-body">
                 <h4 className="card-title">{product.name}</h4>
-                <p className="card-text">{product.description}</p>
+                {/* <p className="card-text">{product.description}</p> */}
                 <p className="card-text"><strong>{product.price} SEK</strong></p>
                 <a href={`http://localhost:3000/productdetail/${product.id}`} className="btn btn-primary">View Product</a>
               </div>
