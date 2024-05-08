@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { Card, Button } from 'react-bootstrap';
 import './ProductDetail.css';
+import CreateOrder from './OrderCreate';
 
 const ProductDetail = () => {
   const [product, setProduct] = useState({});
@@ -62,6 +63,7 @@ const ProductDetail = () => {
         <Card.Footer className="d-flex justify-content">
           <Button className="custom-button-size btn-danger" onClick={handleDelete}>Delete Product</Button>
           <Link to={`/productedit/${product.id}`} className="btn custom-button btn-primary">Edit Product</Link>
+          <Link to={`/createorder/${product.id}`} className="btn custom-button btn-primary">BUY</Link>
         </Card.Footer>
       </Card>
     </div>
