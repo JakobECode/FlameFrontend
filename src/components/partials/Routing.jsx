@@ -1,15 +1,15 @@
 import { Route, Routes } from "react-router-dom";
-import ProductDetail from "../views/ProductDetail";
-import Home from "../views/Home";
-import ProductInsert from '../views/ProductInsert';
-import ProductEdit from '../views/ProductEdit';
-import Login from "../views/Login";
-import Register from "../views/Register";
-import Contact from "../views/Contact";
-import About from "../views/About";
-import OrderList from "../views/OrderList";
-import OrderDetail from "../views/OrderDetail";
-import OrderCreate from "../views/OrderCreate";
+import ProductDetail from "../../views/ProductDetail";
+import Home from "../../views/Home";
+import ProductInsert from '../../views/ProductInsert';
+import ProductEdit from '../../views/ProductEdit';
+import Login from "../../views/Login";
+import Register from "../../views/Register";
+import Contact from "../../views/Contact";
+import About from "../../views/About";
+import OrderList from "../../views/OrderList";
+import OrderDetail from "../../views/OrderDetail";
+import OrderCreate from "../../views/OrderCreate";
 
 const Routing = () => {
     return(
