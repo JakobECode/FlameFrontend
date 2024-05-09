@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';  // Ensure Bootstrap CSS is imported
-import './FormStyles.css';
+import './LogRegStyles.css';
 
 const Register = () => {
     const [userDetails, setUserDetails] = useState({

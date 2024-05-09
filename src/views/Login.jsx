@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './FormStyles.css';
+import './LogRegStyles.css';
 
 const Login = () => {
   const [credentials, setCredentials] = useState({
