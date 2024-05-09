@@ -31,6 +31,17 @@ const OrderDetail = () => {
     fetchOrderDetails();
   }, [orderId]);
 
+  const calculateTotal = (items, quantity) => {
+    let totalPrice = 0;
+       // Loopar genom varje item och adderar dess pris till totalPrice
+    for (let i = 0; i < items.length; i++) {
+
+        totalPrice += items[i].price;
+    }
+    // Multiplicera den totala summan av priser med quantity
+    return totalPrice * quantity;
+};
+
   if (loading) return <div className="container mt-3 text-center"><p>Loading order details...</p></div>;
   if (error) return (
     <Modal show={true} onHide={() => setError('')}>
@@ -61,6 +72,7 @@ const OrderDetail = () => {
                 <Card.Img className="custom-image-size" src={item.imageUrl} alt={`Image of ${item.name}`} />
               </Card.Text>
             ))}
+            <Card.Text><strong>Total:</strong> {order.items ? calculateTotal(order.items, order.quantity) : 0} kr</Card.Text>
             <Button variant="secondary" onClick={() => navigate(-1)}>Back to orders</Button>
           </Card.Body>
         </Card>
