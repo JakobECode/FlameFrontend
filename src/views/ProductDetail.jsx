@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { Card, Button } from 'react-bootstrap';
 import './ProductDetail.css';
-import CreateOrder from './OrderCreate';
+// import CreateOrder from './OrderCreate';
 
 const ProductDetail = () => {
   const [product, setProduct] = useState({});
@@ -27,15 +27,19 @@ const ProductDetail = () => {
   }, [id]);
 
   const handleDelete = async () => {
+    const token = localStorage.getItem('token'); // Retrieve the token from localStorage
     try {
       const response = await fetch(`https://localhost:7272/api/Products/delete/${id}`, {
         method: 'DELETE',
+        headers: {
+          'Authorization': `Bearer ${token}` // Include the token in the Authorization header
+        }
       });
-
+  
       if (!response.ok) {
         throw new Error('Något gick fel vid borttagning av produkt');
       }
-
+  
       navigate("/");
     } catch (error) {
       console.error(error);
