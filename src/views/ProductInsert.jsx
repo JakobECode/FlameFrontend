@@ -10,18 +10,20 @@ function ProductInsert() {
     imageUrl: ''
   });
 
-  const navigate = useNavigate(); // Använd useNavigate här
+  const navigate = useNavigate();
 
   const handleInputChange = (e) => {
     setProduct({ ...product, [e.target.name]: e.target.value });
-  }
+  };
 
   const handleInsert = async () => {
+    const token = localStorage.getItem('token'); // Hämta token från localStorage
     try {
       const response = await fetch('https://localhost:7272/api/Products/Add', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}` // Använd token dynamiskt här
         },
         body: JSON.stringify(product),
       });

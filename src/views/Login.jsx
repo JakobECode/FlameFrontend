@@ -6,8 +6,9 @@ const Login = () => {
   const [credentials, setCredentials] = useState({
     email: '',
     password: '',
-    rememberMe: false, // Initialt sätter vi detta till false
+    rememberMe: false,
   });
+  const [error, setError] = useState('');
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -20,36 +21,47 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setError(''); // Rensa tidigare felmeddelanden vid nytt försök
     try {
-      // Här definierar vi vår API-anropsfunktion
       const response = await fetch('https://localhost:7272/api/Account/Login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-          ...credentials,
-          rememberMe: credentials.rememberMe.toString(), // Konvertera booleskt värde till sträng om ditt API kräver det
-        }),
+        
+        body: JSON.stringify(credentials),
       });
 
+      console.log(response)
+
       if (!response.ok) {
-        throw new Error('Login failed');
+        const errorMsg = await response.text(); // Försök att få ett mer specifikt felmeddelande från servern
+        throw new Error(errorMsg || 'Login failed due to server error');
+      }
+       
+      const data = await response.text();
+      console.log('Login success:', data);
+
+
+      // Spara token i localStorage eller sessionStorage
+      if (credentials.rememberMe) {
+        localStorage.setItem('token', data);
+      } else {
+        //sessionStorage.setItem('token', data);
+        localStorage.setItem('token', data);
       }
 
-      // Om login är lyckad, hantera svaret här. Exempelvis spara en token.
-      const data = await response.json();
-      console.log('Login success', data);
-      // Redirect on successful login
       navigate('/');
     } catch (error) {
       console.error('Login failed:', error);
+      setError('Login failed. Please check your credentials and try again.');
     }
   };
 
   return (
     <form onSubmit={handleSubmit}>
       <h2>Login</h2>
+      {error && <div className="error">{error}</div>}
       <div>
         <label htmlFor="email">Email:</label>
         <input
@@ -58,6 +70,7 @@ const Login = () => {
           id="email"
           value={credentials.email}
           onChange={handleChange}
+          required
         />
       </div>
       <div>
@@ -68,6 +81,7 @@ const Login = () => {
           id="password"
           value={credentials.password}
           onChange={handleChange}
+          required
         />
       </div>
       <div>
