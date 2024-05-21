@@ -7,11 +7,16 @@ import { useEffect, useState } from 'react';
 const Navigation = () => {
 
     const [email, setUsername] = useState('');
+    const [role, setUserrole] = useState('');
     useEffect(() => {
         // Retrieve the username from localStorage when the component mounts
         const storedUsername = localStorage.getItem('email');
         if (storedUsername) {
             setUsername(storedUsername);
+        }
+        const storedUserrole = localStorage.getItem('role');
+        if (storedUserrole) {
+            setUserrole(storedUserrole);
         }
     }, []); // The empty array ensures this effect runs only once after the initial render
 
@@ -25,7 +30,7 @@ const Navigation = () => {
         //navigate('/');
         window.location = '/';
     };
-    
+
     return(<>
         <nav>
             <ul>
@@ -38,7 +43,7 @@ const Navigation = () => {
                 {/* <li><NavLink to="/OrderList">OrderList</NavLink></li> */}
                 {/* <li><NavLink to="/OrderDetail">OrderDetail</NavLink></li> */}
             
-                {email && (
+                {email && role && role === 'admin' && (
                                 <>
                                     <li><NavLink to="/OrderCreate">OrderCreate</NavLink></li>
                                     <li><NavLink to="/OrderList">OrderList</NavLink></li>

@@ -45,10 +45,12 @@ const Login = () => {
       if (credentials.rememberMe) {
         localStorage.setItem('token', data.token);
         localStorage.setItem('email', data.email);
+        localStorage.setItem('role',data.role );
       } else {
         //sessionStorage.setItem('token', data);
         localStorage.setItem('token', data.token);
         localStorage.setItem('email', data.email);
+        localStorage.setItem('role',data.role );
       }
 
       //navigate('/');
