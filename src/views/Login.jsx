@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import './LogRegStyles.css';
 
 const Login = () => {
@@ -9,7 +8,7 @@ const Login = () => {
     rememberMe: false,
   });
   const [error, setError] = useState('');
-  const navigate = useNavigate();
+  //const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -27,31 +26,33 @@ const Login = () => {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          
         },
         
         body: JSON.stringify(credentials),
       });
-
-      console.log(response)
 
       if (!response.ok) {
         const errorMsg = await response.text(); // Försök att få ett mer specifikt felmeddelande från servern
         throw new Error(errorMsg || 'Login failed due to server error');
       }
        
-      const data = await response.text();
+      const data = await response.json();
       console.log('Login success:', data);
 
 
       // Spara token i localStorage eller sessionStorage
       if (credentials.rememberMe) {
-        localStorage.setItem('token', data);
+        localStorage.setItem('token', data.token);
+        localStorage.setItem('email', data.email);
       } else {
         //sessionStorage.setItem('token', data);
-        localStorage.setItem('token', data);
+        localStorage.setItem('token', data.token);
+        localStorage.setItem('email', data.email);
       }
 
-      navigate('/');
+      //navigate('/');
+      window.location = '/';
     } catch (error) {
       console.error('Login failed:', error);
       setError('Login failed. Please check your credentials and try again.');
