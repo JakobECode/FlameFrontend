@@ -41,13 +41,13 @@ function ProductEdit() {
   const handleUpdate = async (e) => {
     e.preventDefault();
     setLoading(true);
-    const token = localStorage.getItem('token');  // Hämta token från localStorage
+    const token = localStorage.getItem('token'); 
     try {
       const response = await fetch(`https://localhost:7272/api/Products/Update`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${token}`  // Använd token här
+          'Authorization': `Bearer ${token}`  
         },
         body: JSON.stringify(product),
       });

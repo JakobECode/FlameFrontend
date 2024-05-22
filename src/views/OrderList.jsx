@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Modal, Button, Card } from 'react-bootstrap';
 
-// API endpoint to fetch all orders
+
 const API_URL = 'https://localhost:7272/api/Order/AllOrders';
 
-// Function to fetch orders from the API
+
 const fetchOrders = async () => {
   try {
     const response = await fetch(API_URL);
@@ -15,38 +15,36 @@ const fetchOrders = async () => {
     return await response.json();
   } catch (error) {
     console.error('Fetching orders failed:', error);
-    throw error;  // Re-throw to handle it in the component
+    throw error; 
   }
 };
-// OrderList component definition
-const OrderList = () => {
-  const [orders, setOrders] = useState([]); // State to hold the list of orders
-  const [error, setError] = useState('');   // State to handle any errors
-  const [loading, setLoading] = useState(true); // State to handle the loading status
 
-  // Effect hook to fetch orders when component mounts
+const OrderList = () => {
+  const [orders, setOrders] = useState([]); 
+  const [error, setError] = useState('');   
+  const [loading, setLoading] = useState(true); 
+
+
   useEffect(() => {
     fetchOrders().then(setOrders).catch(error => {
-      setError(error.message); // Set error message if fetching fails
+      setError(error.message); 
     }).finally(() => {
-      setLoading(false); // Ensure loading is set to false after fetching
+      setLoading(false); 
     });
   }, []);
 
-  // Function to format the date strings
   const formatDate = (dateString) => {
     const date = new Date(dateString);
     return date.toLocaleDateString() + ' ' + date.toLocaleTimeString();
   };
 
-  // Display loading message
+
   if (loading) return (
     <div className="container mt-3 text-center">
       <p>Loading orders...</p>
     </div>
   );
 
-  // Display error modal if an error occurred
   if (error) return (
     <Modal show={true} onHide={() => setError('')}>
       <Modal.Header closeButton>
@@ -61,7 +59,6 @@ const OrderList = () => {
     </Modal>
   );
 
-  // Render the list of orders if not loading and no error
   return (
     <div className="container mt-3">
       <h1 className="mb-3">Order List</h1>

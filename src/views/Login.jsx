@@ -8,7 +8,6 @@ const Login = () => {
     rememberMe: false,
   });
   const [error, setError] = useState('');
-  //const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -26,7 +25,6 @@ const Login = () => {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          
         },
         
         body: JSON.stringify(credentials),
@@ -39,7 +37,6 @@ const Login = () => {
        
       const data = await response.json();
       console.log('Login success:', data);
-
 
       // Spara token i localStorage eller sessionStorage
       if (credentials.rememberMe) {
