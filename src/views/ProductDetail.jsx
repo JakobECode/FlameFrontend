@@ -8,7 +8,19 @@ const ProductDetail = () => {
   const { id } = useParams();
   const navigate = useNavigate();
 
+  const [email, setUsername] = useState('');
+  const [role, setUserrole] = useState('');
+
   useEffect(() => {
+     // Retrieve the username from localStorage when the component mounts
+     const storedUsername = localStorage.getItem('email');
+     if (storedUsername) {
+         setUsername(storedUsername);
+     }
+     const storedUserrole = localStorage.getItem('role');
+     if (storedUserrole) {
+         setUserrole(storedUserrole);
+     }
     const fetchProduct = async () => {
       try {
         const response = await fetch(`https://localhost:7272/api/Products/Get?id=${id}`);
@@ -65,7 +77,11 @@ const ProductDetail = () => {
         </Card.Body>
         <Card.Footer className="d-flex justify-content">
           <Button className="custom-button-size btn-danger" onClick={handleDelete}>Delete Product</Button>
-          <Link to={`/productedit/${product.id}`} className="btn custom-button btn-primary">Edit Product</Link>
+          {email && role && role === 'admin' && (
+                                <>
+                                    <Link to={`/productedit/${product.id}`} className="btn custom-button btn-primary">Edit Product</Link>
+                                </>
+                            )}
           <Link to={`/createorder/${product.id}`} className="btn custom-button btn-primary">BUY</Link>
         </Card.Footer>
       </Card>
